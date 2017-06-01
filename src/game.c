@@ -1,9 +1,10 @@
 #include "game.h"
 
-void igra(char *zagadka) {
+int igra(char *zagadka) {
 	char otvet[strlen(zagadka)];
 	char *otvet_tmp = malloc(sizeof(char*) * 100);
 	int i,hp = 6;
+	int flag = 0;
 
 	for (i = 0; i < strlen(zagadka); i++)
 		otvet[i] = '_';
@@ -11,8 +12,10 @@ void igra(char *zagadka) {
 
 	while (hp > 0 && strcmp(zagadka, otvet)) {
 		system("cls");
-		if (hp < 6)
+		if (hp < 6) {
 			printf("\n Вы ошиблись! \n");
+			return flag = -1;
+		}
 		printf("\n Слово: %s", otvet);
 		printf("\n\n HP = %d. Введите букву или слово целиком: ", hp);
 		scanf("%s", otvet_tmp);
@@ -24,14 +27,20 @@ void igra(char *zagadka) {
 					a++;
 				}
 			}
-			if (a == 0)
+			if (a == 0) {
 				hp--;
+				return flag = -1;
+			}
 		} else {
-			if (strcmp(zagadka,otvet_tmp)==0) {
-				for (i=0;i<strlen(zagadka);i++) otvet[i]=zagadka[i];
+			if (strcmp(zagadka, otvet_tmp) == 0) {
+				for (i = 0; i < strlen(zagadka); i++)
+					otvet[i] = zagadka[i];
 			} else {
 				hp--;
+				return flag = -1;
 			}
+		}
 	}
+	return flag;
 }
 

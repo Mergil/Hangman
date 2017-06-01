@@ -1,7 +1,5 @@
 #include "game.h"
 
-void igra(char *zagadka);
-
 int main() {
 
 	setlocale(LC_ALL, "rus");
@@ -18,7 +16,7 @@ int main() {
 		while (fscanf(myfile, "%s", zagadka) != EOF)
 			i++;
 		if (i > 0) {
-			int j = rand()%i;
+			int j = rand() % i;
 			fseek(myfile, 0, SEEK_SET); /// В начало документа
 			for (i = 0;i <= j; i++)
 				fscanf(myfile, "%s", zagadka);
