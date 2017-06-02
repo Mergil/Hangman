@@ -1,6 +1,6 @@
 #include "game.h"
 
-void igra(char *zagadka) {
+int igra(char *zagadka) {
     char otvet[strlen(zagadka)];
     char *otvet_tmp=malloc(sizeof(char*)*100);
     int i,hp=6;
@@ -35,4 +35,5 @@ void igra(char *zagadka) {
             system("cls");
             printf("\n Вы проиграли!\n\n");
         }
+return 0;
 }
