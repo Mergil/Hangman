@@ -21,3 +21,4 @@ build/test/tests.o: test/tests.c
 clean:
 	rm -f build/src/*.o
 	rm -f bin/main bin/tests
+	rm -f build/test/*.o
