@@ -38,6 +38,16 @@ int main() {
 		igra(zagadka);
 	}
 
+	if (strcmp(zagadka,otvet)==0) {
+	system("cls");
+printf("\n Вы победили!\n\n");
+
+	} else {
+	system("cls");
+printf("\n Вы проиграли!\n\n");
+}
+}
+
     return 0;
 }
 
