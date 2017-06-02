@@ -1,7 +1,5 @@
 #include "game.h"
 
-void igra(char *zagadka);
-
 int main() {
     setlocale(LC_ALL,"rus");
     int i=0;

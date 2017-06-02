@@ -7,6 +7,6 @@
 #include <locale.h>
 #include <string.h>
 
-void igra(char *zagadka);
+int igra(char *zagadka);
 
 #endif
